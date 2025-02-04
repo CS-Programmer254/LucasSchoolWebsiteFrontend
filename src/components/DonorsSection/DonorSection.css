@@ -1,0 +1,49 @@
+/* Keyframes for smooth horizontal scrolling */
+@keyframes slideInfinite {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .donor-container {
+    display: flex;
+    animation: slideInfinite 20s linear infinite;
+  }
+  
+  .donor-list {
+    display: flex;
+    min-width: 100%; /* Ensure each donor list takes up full width of container */
+  }
+  
+  .donor-card {
+    box-shadow: 0px 4px 8px rgba(139, 0, 0, 0.3);
+  }
+  
+  /* Ensures overflow content is hidden, and only the visible part is shown */
+  .relative {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ensures the container fits within the parent */
+  }
+  
+  .donor-list .transform {
+    flex-shrink: 0;
+  }
+  
+  /* Container for donor cards to make sure we only show 5 at a time */
+  .donor-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Make sure each card has enough space and aligns well */
+  .donor-list > div {
+    flex-basis: calc(100% / 5); /* 5 items per view */
+    margin-right: 16px; /* Add spacing between cards */
+    max-width: 20%; /* Limit card width */
+  }
+  
